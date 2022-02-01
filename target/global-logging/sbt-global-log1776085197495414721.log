@@ -1,0 +1,187 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(13de339a-fd6b-4543-869a-c43f6b635a95), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[31merror[0m] [0m[0morg.apache.spark.sql.catalyst.errors.package$TreeNodeException: execute, tree:[0m
+[0m[[0m[31merror[0m] [0m[0mExchange hashpartitioning(country#2, 200)[0m
+[0m[[0m[31merror[0m] [0m[0m+- *(1) HashAggregate(keys=[country#2], functions=[partial_max(Tcases#3)], output=[country#2, max#20])[0m
+[0m[[0m[31merror[0m] [0m[0m   +- HiveTableScan [country#2, Tcases#3], HiveTableRelation `default`.`data2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, [Date#1, country#2, Tcases#3, Newcases#4, ActiveCases#5, Tdeaths#6, dDeaths#7][0m
+[0m[[0m[31merror[0m] [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:56)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.doExecute(ShuffleExchangeExec.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.aggregate.HashAggregateExec.inputRDDs(HashAggregateExec.scala:150)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.TakeOrderedAndProjectExec.doExecute(limit.scala:149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.ProjectExec.inputRDDs(basicPhysicalOperators.scala:41)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.getByteArrayRdd(SparkPlan.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:337)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:38)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3278)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$52.apply(Dataset.scala:3259)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:77)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3258)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.head(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.take(Dataset.scala:2703)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.showString(Dataset.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:723)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:682)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:691)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:105)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1.main(Project1.scala)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.invokeMain(Run.scala:143)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.execute$1(Run.scala:93)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.$anonfun$runWithLoader$5(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run$.executeSuccess(Run.scala:186)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.runWithLoader(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$bgRunTask$6(Defaults.scala:1983)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$termWrapper$2(Defaults.scala:1922)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.Try$.apply(Try.scala:213)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.BackgroundThreadPool$BackgroundRunnable.run(DefaultBackgroundJobService.scala:369)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0mCaused by: org.apache.hadoop.mapred.InvalidInputException: Input path does not exist: file:/C:/Users/Family/Desktop/Revature%20-%20Big%20Data/211213-Big-Data-Reston/week%207/Project1Ex/spark-warehouse/data2[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.mapred.FileInputFormat.singleThreadedListStatus(FileInputFormat.java:285)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.mapred.FileInputFormat.listStatus(FileInputFormat.java:228)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.hadoop.mapred.FileInputFormat.getSplits(FileInputFormat.java:313)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.HadoopRDD.getPartitions(HadoopRDD.scala:200)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.MapPartitionsRDD.getPartitions(MapPartitionsRDD.scala:46)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:253)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD$$anonfun$partitions$2.apply(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Option.getOrElse(Option.scala:121)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDD.partitions(RDD.scala:251)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.ShuffleDependency.<init>(Dependency.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec$.prepareShuffleDependency(ShuffleExchangeExec.scala:321)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.prepareShuffleDependency(ShuffleExchangeExec.scala:91)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec$$anonfun$doExecute$1.apply(ShuffleExchangeExec.scala:128)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec$$anonfun$doExecute$1.apply(ShuffleExchangeExec.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:52)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.doExecute(ShuffleExchangeExec.scala:119)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.aggregate.HashAggregateExec.inputRDDs(HashAggregateExec.scala:150)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.TakeOrderedAndProjectExec.doExecute(limit.scala:149)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:371)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.ProjectExec.inputRDDs(basicPhysicalOperators.scala:41)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:605)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:131)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:152)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:127)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.getByteArrayRdd(SparkPlan.scala:247)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SparkPlan.executeTake(SparkPlan.scala:337)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.CollectLimitExec.executeCollect(limit.scala:38)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.org$apache$spark$sql$Dataset$$collectFromPlan(Dataset.scala:3278)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$head$1.apply(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset$$anonfun$52.apply(Dataset.scala:3259)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:77)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.withAction(Dataset.scala:3258)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.head(Dataset.scala:2489)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.take(Dataset.scala:2703)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.showString(Dataset.scala:254)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:723)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:682)[0m
+[0m[[0m[31merror[0m] [0m[0m	at org.apache.spark.sql.Dataset.show(Dataset.scala:691)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1$.main(Project1.scala:105)[0m
+[0m[[0m[31merror[0m] [0m[0m	at Project1.main(Project1.scala)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.invokeMain(Run.scala:143)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.execute$1(Run.scala:93)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.$anonfun$runWithLoader$5(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run$.executeSuccess(Run.scala:186)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Run.runWithLoader(Run.scala:120)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$bgRunTask$6(Defaults.scala:1983)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.Defaults$.$anonfun$termWrapper$2(Defaults.scala:1922)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.util.Try$.apply(Try.scala:213)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.BackgroundThreadPool$BackgroundRunnable.run(DefaultBackgroundJobService.scala:369)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.Thread.run(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrun[0m) org.apache.spark.sql.catalyst.errors.package$TreeNodeException: execute, tree:[0m
+[0m[[0m[31merror[0m] [0m[0mExchange hashpartitioning(country#2, 200)[0m
+[0m[[0m[31merror[0m] [0m[0m+- *(1) HashAggregate(keys=[country#2], functions=[partial_max(Tcases#3)], output=[country#2, max#20])[0m
+[0m[[0m[31merror[0m] [0m[0m   +- HiveTableScan [country#2, Tcases#3], HiveTableRelation `default`.`data2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, [Date#1, country#2, Tcases#3, Newcases#4, ActiveCases#5, Tdeaths#6, dDeaths#7][0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 14 s, completed Jan 31, 2022 11:18:44 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
